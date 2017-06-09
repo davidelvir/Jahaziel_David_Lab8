@@ -40,8 +40,12 @@ private:
 
       NumeradorF= Numerador1* racional->getNumerador();
 
+      string resN1 = to_string(NumeradorF);
+      string resD1 = to_string(DenominadorF);
+        
 
-      resultado+= NumeradorF<<" + "<<"("<<coeficiente<<")"<<" ("<<indice<<") "<<"^"<<"("<<radicando<<")"<<"/ "<<DenominadorF<<endl;
+
+      resultado+= resN1+" + "+"("<<coeficiente<<")"+" ("+indice+") "+"^"+"("+radicando+")"+"/ "+resD1;
 
       return resultado;
 
@@ -62,7 +66,9 @@ private:
 
         suma = radical->getCoeficiente()+ coeficiente;
         
-        resultado+= "("<<suma<<")"<<" ("<<indice<<") "<<"^"<<"("<<radicando<<")"<<endl;
+        string res = to_string(suma);
+        
+        resultado+= "("+res+")"+" ("<<indice<<") "+"^"+"("+radicando+")";
 
 
       }
@@ -75,15 +81,27 @@ private:
 
     virtual string operator+ (int numero){
         //suma de un radical con un int 
+        string resultado;
 
-        
+        string resN1 = to_string(numero);
+      
+      
 
-
-
+        resultado+= resN1+"+"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
 
     }
 
-    virtual string operator+ (double numero);
+    virtual string operator+ (double numero){
+        string resultado;
+
+        string resN1 = to_string(numero);
+      
+      
+
+        resultado+= resN1+"+"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
+
+    }
+
 
     virtual string operator- (Racional& racional);
     virtual string operator- (Radical& radical);
