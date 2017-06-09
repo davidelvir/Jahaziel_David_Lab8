@@ -42,9 +42,6 @@ class Racional : public Real{
         int resN = resultado->getNumerador();
         int resD = resultado->getDenominador();
 
-        //char *tem1 = itoa(resN);
-        //char *tem2 = itoa(resD);
-
         string resN1 = to_string(resN);
         string resD1 = to_string(resD);
         
@@ -52,8 +49,24 @@ class Racional : public Real{
         return res;
 
     }
-    /*virtual string operator+ (Radical& radical) = 0;
-    virtual string operator+ (int) = 0;
+    virtual string operator+ (Radical& radical){
+      int coeficiente1 = radical.getCoeficiente() * denominador;
+
+      string coeficiente = to_string(coeficiente1);
+      string indice = to_string(radical.getIndice());
+      string radicando = to_string(radical.getRadicando());
+      string den = to_string(denominador);
+      string num = to_string(numerador);
+      return "("+num + "+ ("+coeficiente+")("+radicando+")^(1/"+indice+")) /"+den;
+    }
+    virtual string operator+ (int entero){
+      int suma = (entero*denominador) + numerador;
+      
+      string den = to_string(suma);
+      string num = to_string(denominador);
+      return num + "/" + den;
+
+    }
     virtual string operator+ (double) = 0;
 
     virtual string operator- (Racional& racional) = 0;
@@ -69,7 +82,7 @@ class Racional : public Real{
     virtual string operator/ (Racional& racional) = 0;
     virtual string operator/ (Radical& radical) = 0;
     virtual string operator/ (int) = 0;
-    virtual string operator/ (double) = 0;*/
+    virtual string operator/ (double) = 0;
     
 };
 
