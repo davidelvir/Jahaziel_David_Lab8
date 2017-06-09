@@ -12,9 +12,58 @@ using namespace std;
 
 int main(){
 
+	char resp = 's';
+ 	int option;
+	while(resp=='s'||resp=='S'){
 
-	cout <<"Hola"<<endl;
+		cout <<"Menu"<<endl;
+		cout <<"1-Agregar Real"<<endl;
+		cout <<"2-Operar entre numeros del banco"<<endl;
+		cout <<"3-Operar numero del banco con otro numero"<<endl;
+		cout <<"4-Salir"<<endl;
+		cin>> option;
+		switch (option){
+			case 1:{
+				int op2;
+				cout<<"Menu de Agregar Reales"<<endl;
+				cout<<" "<<endl;
+				cout<<"1-Agregar Racional"<<endl;
+				cout<<"2-Agregar Radical"<<endl;
+				cin>>op2;
+
+				swtich(op2){
+					case 1:{
+						//Agregar Racional
+
+					break;
+					}
+
+					case 2:{
+						//Agregar Radical
+
+					break;
+					}
 
 
-return 0;	
+				}
+
+
+				break;
+			}
+
+			case 2:{
+				//OPeracion entre dos numeros del banco
+
+
+			}
+
+
+
+
+
+		}
+
+
+	}
+	return 0;
 }
