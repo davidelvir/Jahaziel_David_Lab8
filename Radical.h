@@ -40,10 +40,10 @@ private:
 
       string resultado;
 
-      DenominadorF = Racional->setDenominador(racional->getDenominador*1);
-      Numerador1 = DenominadorF/ racional->getDenominador();
+      DenominadorF = aux->setDenominador(racional.getDenominador*1);
+      Numerador1 = DenominadorF/ racional.getDenominador();
 
-      NumeradorF= Numerador1* racional->getNumerador();
+      NumeradorF= Numerador1* racional.getNumerador();
 
       string resN1 = to_string(NumeradorF);
       string resD1 = to_string(DenominadorF);
@@ -66,10 +66,10 @@ private:
       string resultado;
       int suma;
 
-      if(radical->getRadicando()==radicando){
+      if(radical.getRadicando()==radicando){
 
 
-        suma = radical->getCoeficiente()+ coeficiente;
+        suma = radical.getCoeficiente()+ coeficiente;
         
         string res = to_string(suma);
         
@@ -121,10 +121,10 @@ private:
 
       string resultado;
 
-      DenominadorF = Racional->setDenominador(racional->getDenominador*1);
-      Numerador1 = DenominadorF/ racional->getDenominador();
+      DenominadorF = aux->setDenominador(racional.getDenominador*1);
+      Numerador1 = DenominadorF/ racional.getDenominador();
 
-      NumeradorF= Numerador1* racional->getNumerador();
+      NumeradorF= Numerador1* racional.getNumerador();
 
       string resN1 = to_string(NumeradorF);
       string resD1 = to_string(DenominadorF);
@@ -145,10 +145,10 @@ private:
       string resultado;
       int suma;
 
-      if(radical->getRadicando()==radicando){
+      if(radical.getRadicando()==radicando){
 
 
-        suma = radical->getCoeficiente()- coeficiente;
+        suma = radical.getCoeficiente()- coeficiente;
         
         string res = to_string(suma);
         
@@ -186,7 +186,7 @@ private:
 
   virtual string operator* (Racional& racional){
     //Hacer multiplicaion de un radical con un racional!
-
+    /*
     int Numerador1;
     int DenominadorF;
     int NumeradorF;
@@ -210,7 +210,7 @@ private:
     resultado+= resN1+" - "+"("<<coeficiente<<")"+" ("+indice+") "+"^"+"("+radicando+")"+"/ "+resD1;
 
     return resultado;
-
+  */
   }
 
 
