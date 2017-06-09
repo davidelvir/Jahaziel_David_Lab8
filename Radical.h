@@ -2,6 +2,10 @@
 #ifndef RADICAL_H
 #define RADICAL_H
 
+#include <string>
+#include <iostream>
+using namespace std;
+
 class Radical : public Real{
 
 private:
@@ -212,10 +216,10 @@ private:
   virtual string operator* (Radical& radical){
     return " ";
   }
-  virtual string operator* (int){
+  virtual string operator* (int numero){
     return " ";
   }
-  virtual string operator* (double){
+  virtual string operator* (double numero){
     return " ";
   }
 
@@ -225,10 +229,10 @@ private:
   virtual string operator/ (Radical& radical){
     return " ";
   }
-  virtual string operator/ (int){
+  virtual string operator/ (int numero){
     return " ";
   }
-  virtual string operator/ (double){
+  virtual string operator/ (double nuemero){
     return " ";
   }
 
