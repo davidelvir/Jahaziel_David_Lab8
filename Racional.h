@@ -1,8 +1,8 @@
 #include "Real.h"
 #ifndef RACIONAL_H
 #define RACIONAL_H
-#include <string>;
-
+#include <string>
+#include "Radical.h"
 using namespace std;
 class Racional : public Real{
 
@@ -132,29 +132,29 @@ class Racional : public Real{
     }
 
     virtual string operator* (Racional& racional){
-        return "";
+        return " ";
     }
     virtual string operator* (Radical& radical){
-        return "";
+        return " ";
     }
     virtual string operator* (int entero){
-        return "";
+        return " ";
     }
     virtual string operator* (double doble){
-        return "";
+        return " ";
     }
 
     virtual string operator/ (Racional& racional){
-        return "";
+        return " ";
     }
     virtual string operator/ (Radical& radical){
-        return "";
+        return " ";
     }
     virtual string operator/ (int entero){
-        return "";
+        return " ";
     }
     virtual string operator/ (double doble){
-        return "";
+        return " ";
     }
     
 };

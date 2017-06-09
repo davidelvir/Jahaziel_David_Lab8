@@ -180,7 +180,11 @@ private:
 
     }
 
+<<<<<<< HEAD
     virtual string RestaEnt(int){
+=======
+    virtual string operator- (int numero){
+>>>>>>> 1ff1de7847056c9730d63c862d0f07c79acd366e
     // resta de radical con entero
       string resultado;
 
@@ -197,7 +201,11 @@ private:
    }
 
 
+<<<<<<< HEAD
    virtual string RestaDob(double){
+=======
+   virtual string operator- (double numero){
+>>>>>>> 1ff1de7847056c9730d63c862d0f07c79acd366e
     string resultado;
 
     string resN1 = to_string(numero);
