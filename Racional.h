@@ -1,6 +1,6 @@
 #include "Real.h"
-#ifndef REAL_H
-#define REAL_H
+#ifndef RACIONAL_H
+#define RACIONAL_H
 
 class Racional : public Real{
 
