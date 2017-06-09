@@ -11,7 +11,7 @@ using namespace std;
 
 
 int main(){
-
+  vector<Real*>banco;
 	char resp = 's';
  	int option;
 	while(resp=='s'||resp=='S'){
