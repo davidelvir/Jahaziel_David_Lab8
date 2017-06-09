@@ -28,7 +28,7 @@ private:
     int getRadicando();
     void setRadicando(int);
 
-    virtual string operator+ (Racional& racional){
+    virtual string SumaRac(Racional& racional){
   		// suma de un radical con un racional;
 
       int Numerador1;
@@ -60,7 +60,7 @@ private:
     }
 
 
-    virtual string operator+ (Radical& radical){
+    virtual string SumaRad(Radical& radical){
 
         // RADICAL CON RADICAL
 
@@ -92,7 +92,7 @@ private:
     }
 
 
-    virtual string operator+ (int numero){
+    virtual string SumaEnt(int numero){
         //suma de un radical con un int 
       string resultado;
 
@@ -107,7 +107,7 @@ private:
 
     }
 
-    virtual string operator+ (double numero){
+    virtual string SumaDob(double numero){
       string resultado;
 
       string resN1 = to_string(numero);
@@ -122,7 +122,7 @@ private:
     }
 
 
-    virtual string operator- (Racional& racional){
+    virtual string RestaRac(Racional& racional){
       //resta con un radical y un racional
 
 
@@ -154,7 +154,7 @@ private:
 
     }
 
-    virtual string operator- (Radical& radical){
+    virtual string RestaRad(Radical& radical){
       //resta de un radical con otro radical;
       Radical* aux = new Radical();
 
@@ -180,7 +180,7 @@ private:
 
     }
 
-    virtual string operator- (int){
+    virtual string RestaEnt(int){
     // resta de radical con entero
       string resultado;
 
@@ -197,7 +197,7 @@ private:
    }
 
 
-   virtual string operator- (double){
+   virtual string RestaDob(double){
     string resultado;
 
     string resN1 = to_string(numero);
@@ -212,60 +212,86 @@ private:
 
   }
 
-  virtual string operator* (Racional& racional){
-    //Hacer multiplicaion de un radical con un racional!
-    /*
-    int Numerador1;
-    int DenominadorF;
-    int NumeradorF;
+  virtual string MultRac(Racional& racional){
+    //multiplicacion con racional
+    int operacion1;
+    int operacion2;
 
     Racional* aux = new Racional();
 
 
     string resultado;
 
-    DenominadorF = Racional->setDenominador(racional->getDenominador*1);
-    Numerador1 = DenominadorF/ racional->getDenominador();
+    operacion1= racional.getNumerador()* coeficiente;
+    operacion2 = operacion1/racional.getDenominador(); 
 
-    NumeradorF= Numerador1* racional->getNumerador();
-
-    string resN1 = to_string(NumeradorF);
-    string resD1 = to_string(DenominadorF);
-
-
+    string resN1 = to_string(operacion2);
+    string resN2 = to_string(coeficiente);
+    string resN3 = to_string(indice);
+    string resN4 = to_string(radicando);
 
 
-    resultado+= resN1+" - "+"("<<coeficiente<<")"+" ("+indice+") "+"^"+"("+radicando+")"+"/ "+resD1;
+    resultado+= resN1+""+"("<<resN2<<")"+" ("+resN3+") "+"^"+"("+resN4+")";
 
     return resultado;
-  */
+
+
   }
 
 
-  virtual string operator* (Radical& radical){
-    return " ";
+  virtual string MultRad(Radical& radical){
+
+    //multiplicacion con radical!
+    int operacion1;
+    int operacion2;
+
+    Racional* aux = new Racional();
+
+    string resultado;
+
+    if(radical.getRadicando()==radicando){
+
+    operacion1= racional.getNumerador()* coeficiente;
+    operacion2 = operacion1/racional.getDenominador(); 
+
+    string resN1 = to_string(operacion2);
+    string resN2 = to_string(coeficiente);
+    string resN3 = to_string(indice);
+    string resN4 = to_string(radicando);
+
+
+    resultado+= resN1+""+"("<<resN2<<")"+" ("+resN3+") "+"^"+"("+resN4+")";
+
   }
-  virtual string operator* (int numero){
-    return " ";
+
+    return resultado;
+
+    
   }
-  virtual string operator* (double numero){
+
+  virtual string MultEnt(int numero){
     return " ";
   }
 
-  virtual string operator/ (Racional& racional){
-    return " ";
-  }
-  virtual string operator/ (Radical& radical){
-    return " ";
-  }
-  virtual string operator/ (int numero){
-    return " ";
-  }
-  virtual string operator/ (double nuemero){
+  virtual string MultDiv(double numero){
     return " ";
   }
 
+  virtual string DivRac(Racional& racional){
+    return " ";
+  }
 
+  virtual string DivRad(Radical& radical){
+    return " ";
+  }
+
+  virtual string DivEnt(int numero){
+    return " ";
+  }
+
+  virtual string DivDob(double nuemero){
+    return " ";
+  }
 
 
 };
