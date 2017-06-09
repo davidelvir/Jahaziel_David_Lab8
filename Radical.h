@@ -47,10 +47,13 @@ private:
 
       string resN1 = to_string(NumeradorF);
       string resD1 = to_string(DenominadorF);
+      string resN2 = to_string(coeficiente);
+      string resD2 = to_string(indice);
+      string resD3 = to_string(radicando);
 
 
 
-      resultado+= resN1+" + "+"("<<coeficiente<<")"+" ("+indice+") "+"^"+"("+radicando+")"+"/ "+resD1;
+      resultado+= resN1+" + "+"("<<resN2<<")"+" ("+resD2+") "+"^"+"("+resD3+")"+"/ "+resD1;
 
       return resultado;
 
@@ -72,8 +75,13 @@ private:
         suma = radical.getCoeficiente()+ coeficiente;
         
         string res = to_string(suma);
-        
-        resultado+= "("+res+")"+" ("<<indice<<") "+"^"+"("+radicando+")";
+        string resN1 = to_string(coeficiente);
+        string resN2 = to_string(indice);
+        string resN3 = to_string(radicando);
+
+
+
+        resultado+= "("+res+")"+" ("<<resN2<<") "+"^"+"("+resN3+")";
 
 
       }
@@ -90,9 +98,12 @@ private:
 
       string resN1 = to_string(numero);
       
-      
+      string resN2 = to_string(coeficiente);
+      string resD2 = to_string(indice);
+      string resD3 = to_string(radicando);
 
-      resultado+= resN1+"+"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
+
+      resultado+= resN1+"+"+"("+resN2 +") ("+resD2+") "+"^"+"("+resD3+")";
 
     }
 
@@ -101,9 +112,12 @@ private:
 
       string resN1 = to_string(numero);
       
-      
+      string resN2 = to_string(coeficiente);
+      string resD2 = to_string(indice);
+      string resD3 = to_string(radicando);
 
-      resultado+= resN1+"+"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
+
+      resultado+= resN1+"+"+"("+resN2 +") ("+resD2+") "+"^"+"("+resD3+")";
 
     }
 
@@ -128,10 +142,12 @@ private:
 
       string resN1 = to_string(NumeradorF);
       string resD1 = to_string(DenominadorF);
+      string resN2 = to_string(coeficiente);
+      string resD2 = to_string(indice);
+      string resD3 = to_string(radicando);
 
 
-
-      resultado+= resN1+" - "+"("<<coeficiente<<")"+" ("+indice+") "+"^"+"("+radicando+")"+"/ "+resD1;
+      resultado+= resN1+" - "+"("<<resN2<<")"+" ("+resD2+") "+"^"+"("+resD3+")"+"/ "+resD1;
 
       return resultado;
 
@@ -152,8 +168,12 @@ private:
         
         string res = to_string(suma);
         
-        resultado+= "("+res+")"+" ("<<indice<<") "+"^"+"("+radicando+")";
+        string resN2 = to_string(coeficiente);
+        string resD2 = to_string(indice);
+        string resD3 = to_string(radicando);
 
+
+        resultado+= "("+res+")"+" ("<<resD2<<") "+"^"+"("+resD3+")";
 
       }
 
@@ -162,11 +182,16 @@ private:
 
     virtual string operator- (int){
     // resta de radical con entero
-     string resultado;
+      string resultado;
 
-     string resN1 = to_string(numero);
+      string resN1 = to_string(numero);
 
-     resultado+= resN1+"-"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
+      string resN2 = to_string(coeficiente);
+      string resD2 = to_string(indice);
+      string resD3 = to_string(radicando);
+
+
+     resultado+= resN1+"-"+"("+resN2 +") ("+resD2+") "+"^"+"("+resD3+")";
 
 
    }
@@ -177,9 +202,12 @@ private:
 
     string resN1 = to_string(numero);
 
+    string resN2 = to_string(coeficiente);
+    string resD2 = to_string(indice);
+    string resD3 = to_string(radicando);
 
 
-    resultado+= resN1+"-"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
+    resultado+= resN1+"-"+"("+resN2 +") ("+resD2+") "+"^"+"("+resD3+")";
 
 
   }
