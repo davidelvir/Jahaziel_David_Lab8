@@ -9,7 +9,7 @@ private:
   int coeficiente;
   int indice;
   int radicando;
-  {
+  
   public:
     Radical();
     Radical(int,int,int);
@@ -156,32 +156,83 @@ private:
     }
 
     virtual string operator- (int){
-      string resultado;
+    // resta de radical con entero
+     string resultado;
 
-      string resN1 = to_string(numero);
-      
-      
+     string resN1 = to_string(numero);
 
-      resultado+= resN1+"-"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
-
+     resultado+= resN1+"-"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
 
 
+   }
 
-    }
+
+   virtual string operator- (double){
+    string resultado;
+
+    string resN1 = to_string(numero);
 
 
-    virtual string operator- (double);
 
-    virtual string operator* (Racional& racional);
-    virtual string operator* (Radical& radical);
-    virtual string operator* (int);
-    virtual string operator* (double);
+    resultado+= resN1+"-"+"("+coeficiente +") ("+indice+") "+"^"+"("+radicando+")";
 
-    virtual string operator/ (Racional& racional);
-    virtual string operator/ (Radical& radical);
-    virtual string operator/ (int);
-    virtual string operator/ (double);
+
   }
+
+  virtual string operator* (Racional& racional){
+    //Hacer multiplicaion de un radical con un racional!
+
+    int Numerador1;
+    int DenominadorF;
+    int NumeradorF;
+
+    Racional* aux = new Racional();
+
+
+    string resultado;
+
+    DenominadorF = Racional->setDenominador(racional->getDenominador*1);
+    Numerador1 = DenominadorF/ racional->getDenominador();
+
+    NumeradorF= Numerador1* racional->getNumerador();
+
+    string resN1 = to_string(NumeradorF);
+    string resD1 = to_string(DenominadorF);
+
+
+
+
+    resultado+= resN1+" - "+"("<<coeficiente<<")"+" ("+indice+") "+"^"+"("+radicando+")"+"/ "+resD1;
+
+    return resultado;
+
+  }
+
+
+  virtual string operator* (Radical& radical){
+    return " ";
+  }
+  virtual string operator* (int){
+    return " ";
+  }
+  virtual string operator* (double){
+    return " ";
+  }
+
+  virtual string operator/ (Racional& racional){
+    return " ";
+  }
+  virtual string operator/ (Radical& radical){
+    return " ";
+  }
+  virtual string operator/ (int){
+    return " ";
+  }
+  virtual string operator/ (double){
+    return " ";
+  }
+
+
 
 
 };
