@@ -1,4 +1,5 @@
 #include "Real.h"
+#include "Racional.h"
 #ifndef RADICAL_H
 #define RADICAL_H
 
