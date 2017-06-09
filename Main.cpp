@@ -16,11 +16,11 @@ int main(){
  	int option;
   Real* rad1 = new Radical(2,2,2);
   Real* rad2 = new Radical(3,2,2);
-  Real* rac1 = new Racional(3,4);
-  Real* rac2 = new Racional(7,3);
+  //Real* rac1 = new Racional(3,4);
+  //Real* rac2 = new Racional(7,3);
 
-  cout<<rad1+rad2<<endl;
-  cout<<rac1+rac2<<endl;
+  cout<< *rad1 + *rad2<<endl;
+  //cout<< *rac1 + *rac2<<endl;
 	/*while(resp=='s'||resp=='S'){
 
 		cout <<"Menu"<<endl;

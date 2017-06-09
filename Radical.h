@@ -180,7 +180,7 @@ private:
 
     }
 
-    virtual string operator- (int){
+    virtual string operator- (int numero){
     // resta de radical con entero
       string resultado;
 
@@ -197,7 +197,7 @@ private:
    }
 
 
-   virtual string operator- (double){
+   virtual string operator- (double numero){
     string resultado;
 
     string resN1 = to_string(numero);
