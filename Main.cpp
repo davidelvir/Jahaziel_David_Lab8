@@ -34,12 +34,24 @@ int main(){
 				swtich(op2){
 					case 1:{
 						//Agregar Racional
+						
+						
+							
+
+
 
 					break;
 					}
 
 					case 2:{
 						//Agregar Radical
+
+
+
+
+
+
+
 
 					break;
 					}
@@ -63,6 +75,8 @@ int main(){
 
 		}
 
+		cout <<"Desea continuar[s/n]"<<endl;
+		cin >>resp;
 
 	}
 	return 0;
