@@ -50,39 +50,110 @@ class Racional : public Real{
 
     }
     virtual string operator+ (Radical& radical){
-      int coeficiente1 = radical.getCoeficiente() * denominador;
+        int coeficiente1 = radical.getCoeficiente() * denominador;
 
-      string coeficiente = to_string(coeficiente1);
-      string indice = to_string(radical.getIndice());
-      string radicando = to_string(radical.getRadicando());
-      string den = to_string(denominador);
-      string num = to_string(numerador);
-      return "("+num + "+ ("+coeficiente+")("+radicando+")^(1/"+indice+")) /"+den;
+        string coeficiente = to_string(coeficiente1);
+        string indice = to_string(radical.getIndice());
+        string radicando = to_string(radical.getRadicando());
+        string den = to_string(denominador);
+        string num = to_string(numerador);
+        return "("+num + "+ ("+coeficiente+")("+radicando+")^(1/"+indice+")) /"+den;
     }
     virtual string operator+ (int entero){
-      int suma = (entero*denominador) + numerador;
+        int suma = (entero*denominador) + numerador;
       
-      string den = to_string(suma);
-      string num = to_string(denominador);
-      return num + "/" + den;
+        string den = to_string(suma);
+        string num = to_string(denominador);
+        return num + "/" + den;
 
     }
-    virtual string operator+ (double) = 0;
+    virtual string operator+ (double doble){
+        double suma = (doble*denominador) + numerador;
+      
+        string den = to_string(suma);
+        string num = to_string(denominador);
+        return num + "/" + den;
+    }
 
-    virtual string operator- (Racional& racional) = 0;
-    virtual string operator- (Radical& radical) = 0;
-    virtual string operator- (int) = 0;
-    virtual string operator- (double) = 0;
+    virtual string operator- (Racional& racional){
+        Racional* resultado = new Racional();
+        string res="";
+        if(denominador == racional.getDenominador()){
+            resultado->setNumerador(numerador-racional.getNumerador());
+            resultado->setDenominador(denominador);
+        }else{
+            int A1;
+            int A2;
+            int B;
 
-    virtual string operator* (Racional& racional) = 0;
-    virtual string operator* (Radical& radical) = 0;
-    virtual string operator* (int) = 0;
-    virtual string operator* (double) = 0;
+            A1 = numerador * racional.getDenominador();
+            A2 = racional.getNumerador() * denominador;
 
-    virtual string operator/ (Racional& racional) = 0;
-    virtual string operator/ (Radical& radical) = 0;
-    virtual string operator/ (int) = 0;
-    virtual string operator/ (double) = 0;
+            B = racional.getDenominador() * denominador;
+
+            resultado->setNumerador(A1-A2);
+            resultado->setDenominador(B);
+        }
+
+        int resN = resultado->getNumerador();
+        int resD = resultado->getDenominador();
+
+        string resN1 = to_string(resN);
+        string resD1 = to_string(resD);
+        
+        res+= resN1 + "/" + resD1;
+        return res;
+    }
+    virtual string operator- (Radical& radical){
+        int coeficiente1 = radical.getCoeficiente() * denominador;
+
+        string coeficiente = to_string(coeficiente1);
+        string indice = to_string(radical.getIndice());
+        string radicando = to_string(radical.getRadicando());
+        string den = to_string(denominador);
+        string num = to_string(numerador);
+        return "("+num + "- ("+coeficiente+")("+radicando+")^(1/"+indice+")) /"+den;
+    }
+    virtual string operator- (int){
+        int suma = (entero*denominador) - numerador;
+      
+        string den = to_string(suma);
+        string num = to_string(denominador);
+        return num + "/" + den;
+    }
+    virtual string operator- (double){
+        double suma = (doble*denominador) - numerador;
+      
+        string den = to_string(suma);
+        string num = to_string(denominador);
+        return num + "/" + den;
+    }
+
+    virtual string operator* (Racional& racional){
+        return "";
+    }
+    virtual string operator* (Radical& radical){
+        return "";
+    }
+    virtual string operator* (int){
+        return "";
+    }
+    virtual string operator* (double){
+        return "";
+    }
+
+    virtual string operator/ (Racional& racional){
+        return "";
+    }
+    virtual string operator/ (Radical& radical){
+        return "";
+    }
+    virtual string operator/ (int){
+        return "";
+    }
+    virtual string operator/ (double){
+        return "";
+    }
     
 };
 
