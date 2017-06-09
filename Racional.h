@@ -1,7 +1,9 @@
 #include "Real.h"
 #ifndef RACIONAL_H
 #define RACIONAL_H
+#include <string>;
 
+using namespace std;
 class Racional : public Real{
 
   private:
@@ -114,14 +116,14 @@ class Racional : public Real{
         string num = to_string(numerador);
         return "("+num + "- ("+coeficiente+")("+radicando+")^(1/"+indice+")) /"+den;
     }
-    virtual string operator- (int){
+    virtual string operator- (int entero){
         int suma = (entero*denominador) - numerador;
       
         string den = to_string(suma);
         string num = to_string(denominador);
         return num + "/" + den;
     }
-    virtual string operator- (double){
+    virtual string operator- (double doble){
         double suma = (doble*denominador) - numerador;
       
         string den = to_string(suma);
@@ -135,10 +137,10 @@ class Racional : public Real{
     virtual string operator* (Radical& radical){
         return "";
     }
-    virtual string operator* (int){
+    virtual string operator* (int entero){
         return "";
     }
-    virtual string operator* (double){
+    virtual string operator* (double doble){
         return "";
     }
 
@@ -148,10 +150,10 @@ class Racional : public Real{
     virtual string operator/ (Radical& radical){
         return "";
     }
-    virtual string operator/ (int){
+    virtual string operator/ (int entero){
         return "";
     }
-    virtual string operator/ (double){
+    virtual string operator/ (double doble){
         return "";
     }
     

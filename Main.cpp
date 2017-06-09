@@ -14,7 +14,14 @@ int main(){
   vector<Real*>banco;
 	char resp = 's';
  	int option;
-	while(resp=='s'||resp=='S'){
+  Real* rad1 = new Radical(2,2,2);
+  Real* rad2 = new Radical(3,2,2);
+  Real* rac1 = new Racional(3,4);
+  Real* rac2 = new Racional(7,3);
+
+  cout<<rad1+rad2<<endl;
+  cout<<rac1+rac2<<endl;
+	/*while(resp=='s'||resp=='S'){
 
 		cout <<"Menu"<<endl;
 		cout <<"1-Agregar Real"<<endl;
@@ -78,6 +85,6 @@ int main(){
 		cout <<"Desea continuar[s/n]"<<endl;
 		cin >>resp;
 
-	}
+	}*/
 	return 0;
 }
